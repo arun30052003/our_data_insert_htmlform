@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CREATE_SUBJECT</title>
+    <style>
+        #one:hover
+        {
+            cursor: pointer;
+            background-color: rgb(116, 202, 237);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1><u>SUBJECT_DETAILS_CREATE</u></h1>
+        <form method="POST">
+            {% csrf_token %}
+                    <table cellspacing="5px" cellpadding="5px">
+                        <tr>
+                            <td><label for="sn">School_Name</label></td>
+                            <td>
+                                <select name="sn" id="sn">
+                                    {% for sd in datas %}
+                                        <option value="{{sd.School_Name}}">{{sd.School_Name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="sun">Subject_Name</label></td>
+                            <td><input type="text" id="sun" name="sun"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="tn">Teacher_Name</label></td>
+                            <td><input type="text" id="tn" name="tn"/></td>
+                        </tr>
+                    </table>
+                    <tr>
+                        <input type="submit" id="one" value="Create_Subject">
+                    </tr>
+        </form>
+    </center>
+</body>
+</html>

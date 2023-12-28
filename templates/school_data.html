@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SCHOOL_DATA</title>
+    <style>
+        div:hover
+        {
+            font-size: 20px;
+            color: rgb(211, 99, 51);
+        }
+
+        table
+        {
+            border-collapse: collapse;
+        }
+        th
+        {
+            background-color: black;
+            color: whitesmoke;
+        }
+        table:hover
+        {
+            cursor: pointer;
+            background-color: rgb(255, 230, 197);
+        }
+        #one:hover
+        {
+            color: rgb(42, 195, 255);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1><u>SCHOOL_DATA_TABLE</u></h1>
+            <table border="2px" cellspacing="5px" cellpadding="5px">
+                <tr>
+                    <th>School_Name</th>
+                    <th>School_Location</th>
+                    <th>Principal_Name</th>
+                </tr>
+                {% for sd in datas %}
+                    <tr id="one">
+                        <td>{{sd.School_Name}}</td>
+                        <td>{{sd.School_Location}}</td>
+                        <td>{{sd.Principal_Name}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </center>
+</body>
+</html>

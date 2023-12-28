@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STUDENT_DATAS</title>
+    <style>
+        div:hover
+        {
+            font-size: 20px;
+            color: rgb(211, 99, 51);
+        }
+
+        table
+        {
+            border-collapse: collapse;
+        }
+        th
+        {
+            background-color: black;
+            color: whitesmoke;
+        }
+        table:hover
+        {
+            cursor: pointer;
+            background-color: rgb(255, 230, 197);
+        }
+        #one:hover
+        {
+            color: rgb(42, 195, 255);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1><u>STUDENT_DATAS_STORED_TABLE</u></h1>
+        <table border="2px" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <th>Subject_Name</th>
+                <th>Student_Id</th>
+                <th>Student_Name</th>
+            </tr>
+            {% for std in datas %}
+                <tr id="one">
+                    <td>{{std.Subject_Name}}</td>
+                    <td>{{std.Student_Id}}</td>
+                    <td>{{std.Student_Name}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </center>
+</body>
+</html>

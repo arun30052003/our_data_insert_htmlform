@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CREATE_SCHOOL</title>
+    <style>
+        #submit:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1><u>SCHOOL_DETAILS_CREATE</u></h1>
+        <form method="POST">
+            {% csrf_token %}
+                    <table cellspacing="5px" cellpadding="5px">
+                        <tr>
+                            <td><label for="sn">School_Name</label></td>
+                            <td><input type="text" id="sn" name="sn"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="sl">School_Location</label></td>
+                            <td><input type="text" id="sl" name="sl"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pn">Principal_Name</label></td>
+                            <td><input type="text" id="pn" name="pn"/></td>
+                        </tr>
+                    </table>
+                    <tr>
+                        <input type="submit" value="Create_School" id="submit">
+                    </tr>
+        </form>
+    </center>
+</body>
+</html>
