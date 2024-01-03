@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETERVING_SUB</title>
+</head>
+<body>
+    <center>
+        <h1>RETERVING_SUB</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="sn">School_Name</label>
+            <select name="sn" id="sn" multiple>
+                {% for sn in datas %}
+                    <option value="{{sn.School_Name}}">{{sn.School_Name}}</option>
+                {% endfor %}
+            </select> <br> <br>
+            <input type="submit" value="select_multiple_SchoolName">
+        </form>
+    </center>
+</body>
+</html>

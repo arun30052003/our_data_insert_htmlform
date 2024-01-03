@@ -14,6 +14,7 @@ def create_school(request):
 
         ST=School.objects.all()
         d={'datas':ST}
+        
         return render(request,'school_data.html',d)
     return render(request,'create_school.html')
 
@@ -54,3 +55,45 @@ def create_student(request):
         d={'datas':STT}
         return render(request,'student_data.html',d)
     return render(request,'create_student.html',d)
+
+
+def reterving_sub(request):
+    ST=School.objects.all()
+    d={'datas':ST}
+
+    if request.method=='POST':
+        schoollist=request.POST.getlist('sn')
+        SUT=Subject.objects.none()
+        for i in schoollist:
+            SUT=SUT|Subject.objects.filter(School_Name=i)
+
+        d1={'datas':SUT}
+        return render(request,'subject_data.html',d1)
+
+    return render(request,'reterving_sub.html',d)
+
+def reterving_stu(request):
+    ST=Subject.objects.all()
+    d={'datas':ST}
+
+    if request.method=='POST':
+        studentlist=request.POST.getlist('sun')
+        STU=Student.objects.none()
+        for j in studentlist:
+            STU=STU|Student.objects.filter(Subject_Name=j)
+
+        d1={'datas':STU}
+        return render(request,'student_data.html',d1)
+    return render(request,'reterving_stu.html',d)
+
+
+def checkbox_sub(request):
+    ST=School.objects.all()
+    d={'datas':ST}
+    return render(request,'checkbox_sub.html',d)
+
+
+def checkbox_stu(request):
+    ST=Subject.objects.all()
+    d={'datas':ST}
+    return render(request,'checkbox_stu.html',d)

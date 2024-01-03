@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox_sub</title>
+</head>
+<body>
+    <center>
+        <h1><u>checkbox_sub</u></h1>
+        <form method="POST" action="{% url 'reterving_sub' %}">
+            {% csrf_token %}
+
+            Select Schools:
+            <br><br>
+
+            {% for ni in datas %}
+            <label for="sn">{{ni.School_Name}}</label>
+            <input type="checkbox" id="sn" name="sn" value="{{ni.School_Name}}">
+            <br><br>
+            {% endfor %}
+            <input type="submit" value="Sub_Data">
+        </form>
+    </center>
+</body>
+</html>
